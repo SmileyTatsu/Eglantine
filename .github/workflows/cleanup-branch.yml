@@ -1,13 +1,9 @@
 name: cleanup-branch
 
 # Branch builds publish a rolling pre-release per branch (branch-<slug>). This removes it when the
-# PR closes or the branch is deleted, and a weekly sweep removes any left behind.
+# PR closes or the branch is deleted, and a weekly sweep removes any left behind. This fork runs it
+# by hand only.
 on:
-  pull_request:
-    types: [closed]
-  delete:
-  schedule:
-    - cron: "30 4 * * 1"
   workflow_dispatch:
 
 permissions:
