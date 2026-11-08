@@ -290,8 +290,8 @@ public:
 
     void ChangeChannel(Tegra::Control::ChannelState& channel_state);
 
-    /// Stops tracking a channel's dirty flags; its state may be freed before the rasterizer.
-    void DetachChannel() {
+    /// Stops using the bound channel's flags, for when it goes away.
+    void ClearChannel() {
         flags = &default_flags;
     }
 
